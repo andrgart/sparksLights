@@ -1,0 +1,89 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(161, 161, 161);
+}
+
+/*  ---  */
+.sparks_box {
+    width: 100%;
+    height: 100%;
+
+    background: radial-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.466)),
+                url('../img/harold.jpeg');
+    background-position: center;
+    background-size: cover;
+
+    overflow: hidden;
+    position: relative;
+}
+
+.focus {
+    width: 200%;
+    height: 200%;
+
+    z-index: 2;
+    position: absolute;
+    -webkit-mask: radial-gradient(circle, #0000 60px, rgba(0, 0, 0, 0.9) 160px);
+    backdrop-filter:blur(10px);
+  }
+
+.spark_up {
+    position: absolute;
+    animation: 8s spark-fly-up infinite ease;
+}
+
+.spark {
+    width: 10px;
+    height: 10px;
+
+    background-color: rgb(255, 60, 0);
+    border-radius: 50%;
+
+    animation: 8s spark-fly-side infinite cubic-bezier(0.455, 0.030, 0.515, 0.955);
+}
+
+@keyframes spark-fly-up {
+    0% {
+        bottom: -5%;
+    }
+    100% {
+        bottom: 105%;
+    }
+}
+@keyframes spark-fly-side {
+    0% {
+        margin-left: 0px;
+    }
+    20% {
+        margin-left: 100px;
+    }
+    40% {
+        margin-left: 0px;
+    }
+    60% {
+        margin-left: 100px;
+    }
+    80% {
+        margin-left: 0px;
+    }
+    100% {
+        margin-left: 100px;
+    }
+}
