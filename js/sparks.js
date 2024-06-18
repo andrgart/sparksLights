@@ -60,7 +60,7 @@ sparkBox.addEventListener('touchmove', (event) => {
 
         circle.style.left = (xUp - rect.left) - (circleWidth / 2) + "px";
         circle.style.top = (yUp - rect.top) - (circleHeight / 2) + "px";
-    }, 50)
+    }, 20)
 });
 
 sparkBox.addEventListener('touchend', () => {
